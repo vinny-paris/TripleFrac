@@ -2,7 +2,7 @@
 # l is the single equation you want to generate the fraction from
 # tree is (a number and) the particular branch of the trianary tree you want (i.e. 1*x + 2*y + 0*z mod 3 = tree)
 
-part <- function(x, l, tree){
+part_single <- function(x, l, tree){
   
   #create the correct coef.'s as l_* 
   n_long <- length(l)
