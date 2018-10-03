@@ -1,3 +1,5 @@
+#Gives all possible equations for how a factorial experiment at 3 levels may be split upon.
+
 alias_design <- function(x){
 
   

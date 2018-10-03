@@ -1,3 +1,7 @@
+#For a given amoung of variables (x), and a matrix or vector for the fraction equations, 
+#this function will retun a data.frame with each row being fully aliased with itself.
+#So for row 1, all variables listed will be fully confounded with each other
+
 alias_machine <- function(x, l){
   
   sizing <- if(length(dim(l)) != 0) {dim(l)[1]} else{1}
