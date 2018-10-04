@@ -8,5 +8,3 @@ alias_dim_calc <- function(x){
 }
 
 
-alias_dim_calc(3)
-alias_dim_calc(50)

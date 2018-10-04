@@ -46,55 +46,5 @@ part <- function(x, l, trees){
 }
 
 
-#Examples
-
-
-x = c('dog', 'cat', 'bird', 'fish')
-l = matrix(c(2, 1,  1, 1, 1, 0, 0, 1), nrow = 2, byrow = TRUE)
-trees <- c(1,2)
-part(x, l, trees)
-
-g <- part(x, l, trees)[[1]]
-n <- part(x, l, trees)
-what_frac(g)
-
-triple_fold(g, c(1,1,1,1))
-triple_fold(g, c(1,2,1,1))[[1]]
-triple_fold(g, c(1,2,2,1))[[1]]
-triple_fold(g, c(1,1,2,1))[[1]]
-triple_fold(g, c(2,2,1,1))[[1]]
-triple_fold(g, c(1,0,0,0))[[1]]
-triple_fold(g, c(1,2,0,0))[[1]]
-
-
-
-
-
-
-
-
-
-
-x <- c("a", "b", "c", "d")
-l <- matrix(c(1,2,0,1,0,1,2,0), nrow = 2, byrow = TRUE)
-trees <- c(1,1)
-h <- part(x, l, trees)[[1]]
-part(x, l, trees)
-what_frac(h)
-triple_fold(h, c(1,0,0,0))[[1]]
-triple_fold(h, c(0,1,1,0))[[1]]
-triple_fold(h, c(0,1,2,0))[[1]]
-
-
-
-x <- c("a", "b", "c", "d", "e", "f")
-l <- matrix(c(1,2,0,1,1,1, 0,1,1,2,0,0, 1,1,1,2,2,0), nrow = 3, byrow = TRUE)
-trees <- c(0,0,0)
-m <- part(x, l, trees)[[1]]
-part(x, l, trees)
-what_frac(m)
-triple_fold(m, c(1,0,0,0,0,0))[[1]]
-triple_fold(m, c(1,1,0,1,0,0))[[1]]
-triple_fold(m, c(1,1,0,2,0,0))[[1]]
 
 

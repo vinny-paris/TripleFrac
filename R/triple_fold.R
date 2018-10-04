@@ -23,13 +23,3 @@ triple_fold <- function(x, expansion){
    
  }
  
-t <- matrix(c(0,0,0,1,2,1,2,1,2), nrow = 3, byrow = TRUE)
-tt <- c(0,2,1)
-
-j <- triple_fold(t,tt)
-j
- 
-
-tt <- c(1,1,1)
-j <- triple_fold(t,tt)
-j
