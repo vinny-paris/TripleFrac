@@ -62,7 +62,8 @@ trees <- c(0,0,0)
 m <- part(x, l, trees)[[1]]
 part(x, l, trees)
 what_frac(m)
-triple_fold(m, c(1,0,2,0,0,0))[[1]]
+triple_fold(m, c(1,0,1,0,0,0))[[1]]
+ triple_fold(m, c(1,0,2,0,0,0))[[1]]
 triple_fold(m, c(1,0,0,0,0,0))[[1]]
 triple_fold(m, c(1,1,0,1,0,0))[[1]]
 triple_fold(m, c(1,1,0,2,0,0))[[1]]
