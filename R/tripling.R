@@ -1,7 +1,7 @@
 tripling <- function(x, l){
   f <- dim(x)[2]
   n <- dim(x)[1]
-  
+  l_n <- dim(l)[1]
   
   holding <- NULL
   for (j in 1:f){
@@ -23,7 +23,7 @@ tripling <- function(x, l){
   h3 <- NULL
   
   for(i in 1:jig){
-    ali <- (1:m)[colSums(q[,i] == qq) == 3]
+    ali <- (1:m)[colSums(q[,i] == qq) == l_n]
     g1 <- holding[ali[1], ]
     g2 <- holding[ali[2], ]
     g3 <- holding[ali[3], ]
