@@ -3,3 +3,4 @@
 export(tripling)
 export(part)
 export(triple_fold)
+export(what_frac)
