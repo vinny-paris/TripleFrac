@@ -42,9 +42,6 @@ tripling <- function(x, l){
   
   
   }
-}
 
 
-
-tripling(x, l)
 
