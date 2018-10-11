@@ -50,7 +50,21 @@ trees <- c(1,1)
 h <- part(x, l, trees)[[1]]
 part(x, l, trees)
 what_frac(h)
+triple_fold(h, c(1,2,0,0))[[1]]
+
 triple_fold(h, c(1,0,0,0))[[1]]
+triple_fold(h, c(0,1,1,0))[[1]]
+triple_fold(h, c(0,1,2,0))[[1]]
+
+
+
+x <- c("a", "b", "c", "d", "e", "f", "g")
+l <- matrix(c(1,2,0,1,0,0,0,0,1,2,0,1,1,0, 0,1,1,2,0,1,0), nrow = 3, byrow = TRUE)
+trees <- c(1,1,1)
+h <- part(x, l, trees)[[1]]
+h <- cbind(rbind(h, h, h), kronecker(c(1,2,3), rep(1, 27)))
+what_frac(h)
+triple_fold(h, c(1,0,1,0,0,0,0))[[1]]
 triple_fold(h, c(0,1,1,0))[[1]]
 triple_fold(h, c(0,1,2,0))[[1]]
 
@@ -62,7 +76,7 @@ trees <- c(0,0,0)
 m <- part(x, l, trees)[[1]]
 part(x, l, trees)
 what_frac(m)
-triple_fold(m, c(1,0,1,0,0,0))[[1]]
+triple_fold(m, c(0,0,1,0,1,1))[[1]]
  triple_fold(m, c(1,0,2,0,0,0))[[1]]
 triple_fold(m, c(1,0,0,0,0,0))[[1]]
 triple_fold(m, c(1,1,0,1,0,0))[[1]]
