@@ -1,9 +1,20 @@
-#returns what fraction is the matix is split along
-#be warned that it only pays attention to fully aliased situations
-#so if only 2 of three levels appear the function will not flag them
-#you have been warned. 
+#' Alias Structure Identifier
+#' Returns what fraction is the matix is split along be warned that it only pays attention to fully aliased situations so if only 2 of three levels appear the function will not flag them you have been warned. 
+#' @export
+#' @param design_matrix This is the design matrix that is of interest. Each column is for the factors and each row for the treatments. Needs to be a matrix or data.frame.
+#' @return This will return a matrix with one column (entitiled Aliased with Intercept) and rows corresponding to the effects confounded with the intercept.
 
-what_frac <- function(x){
+
+
+
+
+
+
+
+
+what_frac <- function(design_matrix){
+  
+  x <- design_matrix
   
   holding <- NULL
   
@@ -27,7 +38,7 @@ what_frac <- function(x){
   }
   
   rownames(holding) <- NULL
-  colnames(holding) <- "Aliased with Fraction"
+  colnames(holding) <- "Aliased with the Intercept"
   
   return(holding)
 }
