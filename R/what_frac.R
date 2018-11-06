@@ -37,6 +37,7 @@ what_frac <- function(design_matrix){
     }
   }
   
+  if(class(holding) == "NULL"){return("No Aliases")}
   rownames(holding) <- NULL
   colnames(holding) <- "Aliased with the Intercept"
   
