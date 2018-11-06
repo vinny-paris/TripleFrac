@@ -7,6 +7,10 @@
 #' @param design_matrix The original design matrix that you would like expanded upon, must come in coded with 0,1,2's
 #' @param rotation_vector The rotation vector with the same length as the column width of the design matirx. Entries may be 0, 1, or 2.
 #' 
+#' @return  This will return a list of two parts
+#' \item{Aliased_with_Fraction} These are the effects that are still confounded with the intercept
+#' \item{Design_Matrix} This is a matrix that is coded 0,1,2 that is the triple foldover created new Design Matrix that is 3 times the size of the orginal design matrix.
+#' 
 #' @examples
 #' \dontrun{
 #' design <- matrix(c(1,2,1,0,1,1,1,2,2), byrow = TRUE, nrow = 3)
