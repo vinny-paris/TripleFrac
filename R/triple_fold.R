@@ -1,8 +1,23 @@
-#This function is the "meat" of the program. It will expand a design matrix x using a 
-#vector specficed as expansion. The expansion variable should be a vector of length 
-# f, for number of factors. All entries should be 0,1,2 depending on what youd like the replacement to be
+#' Generating a New Design Matrix
+#' 
+#' Create the new design matrix from a triple foldover techinque using a rotation vector
+#'
+#' @export
+#' 
+#' @param design_matrix The original design matrix that you would like expanded upon, must come in coded with 0,1,2's
+#' @param rotation_vector The rotation vector with the same length as the column width of the design matirx. Entries may be 0, 1, or 2.
+#' 
+#' @examples
+#' \dontrun{
+#' design <- matrix(c(1,2,1,0,1,1,1,2,2), byrow = TRUE, nrow = 3)
+#' x <- c(1, 2, 0)
+#' triple_fold(design, x)
+#' }
 
-triple_fold <- function(x, expansion){
+
+triple_fold <- function(design_matrix, rotation_vector){
+   expansion <- rotation_vector
+   x <- design_matrix
    
    x1 <- t((t(x) + expansion) %% 3)
    
