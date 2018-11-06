@@ -1,10 +1,28 @@
-#For a given amoung of variables (x), and a matrix or vector for the fraction equations, 
-#this function will retun a data.frame with each row being fully aliased with itself.
-#So for row 1, all variables listed will be fully confounded with each other
+#' Aliased effects
+#' 
+#' During a fractional factorial experiment certain effects are fully confounded. This function will tell display the aliased effects for any effect that is still estimable
+#' 
+#' @export
+#' 
+#' @param num_of_vars A natural number. This tells the function how many variables are intended for your design. The limit is 26.
+#' @param l This is the system of equations used to generate the aliasing structure. It is to have each row be one "cut" of the factorial design and must have the same number of coefficents (which take the values 0, 1, 2) as x.
+#' 
+#' @return A matrix. Each row will be an estimable effect and all it's aliases. 
+#' 
+#' @example 
+#' \dontrun{
+#' l <- matrix(c(1,1,0,0,0,1,2,1), nrow = 2, byrow = TRUE)
+#' l
+#' alias_machine(4, l)
+#' }
 
-alias_machine <- function(x, l){
+
+
+alias_machine <- function(num_of_vars, l){
+
+  x <- num_of_vars
   
-  latin <- data(TripleFrac)
+  latin <- TripleFrac::latin
   
   sizing <- if(length(dim(l)) != 0) {dim(l)[1]} else{1}
     
