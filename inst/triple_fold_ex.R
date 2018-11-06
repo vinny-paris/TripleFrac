@@ -76,8 +76,44 @@ trees <- c(0,0,0)
 m <- part(x, l, trees)[[1]]
 part(x, l, trees)
 what_frac(m)
+
 triple_fold(m, c(0,0,1,0,1,1))[[1]]
  triple_fold(m, c(1,0,2,0,0,0))[[1]]
 triple_fold(m, c(1,0,0,0,0,0))[[1]]
 triple_fold(m, c(1,1,0,1,0,0))[[1]]
 triple_fold(m, c(1,1,0,2,0,0))[[1]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Used for Claim 3
+x <- c("a", "b", "c", "d", "e", "f")
+l <- matrix(c(1,2,1,0,0,0,0,0,1,2,1,0,0,0,0,1,1,2), nrow = 3, byrow = TRUE)
+trees <- c(0,0,0)
+q <- part(x, l, trees)
+p <- q[[1]]
+what_frac(p)
+
+
+
+
+
+#Remark on Claim 2
+x <- c("a", "b", "c", "d")
+l <- matrix(c(1,1,1,0,0,0,0,1), nrow = 2, byrow = TRUE)
+trees <- c(0,0)
+q <- part(x, l, trees)[[1]]
+what_frac(q)
+
+what_frac(triple_fold(q, c(1,1,1,0))[[2]])
+
