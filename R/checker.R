@@ -7,8 +7,23 @@
 #' @param  g A matrix. This is the coded psuedo-design matrix with each element being 0, 1, or 2. Each row corresponds to one generator.
 #' @param rotation_vector This is the rotation vector that is to be evaluated. 
 #' 
-#' @return A List. 
+#' @value A List. 
 #' \item{rotation vector} This is the vector you put in from the parameters
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' q <- c(1, 2, 1, 0, 0, 0,
+       #'       0, 0, 1, 0, 2, 2,
+       #'       0, 0, 1, 1, 0, 1,
+       #'        0, 0, 1, 2, 1, 1,
+       #'        0, 0, 0, 1, 1, 2)
+#' q <- matrix(q, nrow = 5, byrow = TRUE)
+#' checker(q, c(2,1,1,0,1,1))
+#' }
+#' 
+#' 
+#' 
 
 checker <- function(g, rotation_vector){
   q <- g
@@ -46,13 +61,4 @@ checker <- function(g, rotation_vector){
 
 
 
-
-q <- c(1, 2, 1, 0, 0, 0,
-       0, 0, 1, 0, 2, 2,
-       0, 0, 1, 1, 0, 1,
-       0, 0, 1, 2, 1, 1,
-       0, 0, 0, 1, 1, 2)
-q <- matrix(q, nrow = 5, byrow = TRUE)
-q
-prace(q, c(2,1,1,0,1,1))
 
