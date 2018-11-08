@@ -3,7 +3,7 @@
 #' This will create a regular fractional factorial design by solving a system of generating equations.
 #' 
 #' @export
-#' @param ids This is the identifiers for the design factors. It should be a vector with each element being a character string or reducable to a character string. Needs to be of f length.
+#' @param idss This is the identifiers for the design factors. It should be a vector with each element being a character string or reducable to a character string. Needs to be of f length.
 #' @param l This is the matrix system of equations that the new design is to be generated from. It is a matrix of f width and s length with each element being 0, 1 or 2. Each row corresponds to one generation equation.
 #' @param tree A vector of numbers that is 0, 1, or 2 which will be the solution to equation from l (i.e. 1*x + 2*y + 0*z mod 3 = tree). This dictates the fraction you want.
 #' 
@@ -11,9 +11,10 @@
 #' \item{Short Design} A matix. This will return all relevant factors and levels as solutions to the design discluding those factors which simply "cycle through" the design matrix. 
 #' \item{Expansion Variables} A vector. The short design should be copied three times, with a new column for the expansion variable. For each copy increase the expansion variables level by one starting at 0. Continue to grow as needed for as many variables as there are in this category.
 
-part <- function(ids, l, trees){
+part <- function(idss, l, trees){
+  x <- NULL
   
-  x <- ids
+  x <- idss
   
   #create the correct coef.'s as l_* 
   n <- ifelse(is.vector(l) == TRUE, dim(as.data.frame(l))[1], dim(as.data.frame(l))[2])
