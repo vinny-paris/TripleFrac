@@ -1,26 +1,28 @@
-#' Creates a New Design Matrix with Generating Equations
+#'Creates a New Design Matrix with Generating Equations
 #' 
 #' This function takes in a system of equations and an orginal design matrix. The output will be a new design matrix of three times the size of the orginal. This acts very similar to triple_fold but how it goes about exapnding the orgiinal design matrix is different in view points (but can be shown to be exactly equivalent).
 #' 
-#' @export
+#'@export
 #' 
-#' @param design_matrix The original design matrix that you would like expanded upon, must come in coded with 0,1,2's
-#' @param l The system of equations. There must be f-1 equations for f being the number of factors. This should come in as a matrix with a unique, independent equation on each row. Each element of each equation must be coded 0, 1, or 2. 
+#'@param design_matrix The original design matrix that you would like expanded upon, must come in coded with 0,1,2's
+#'@param l The system of equations. There must be f-1 equations for f being the number of factors. This should come in as a matrix with a unique, independent equation on each row. Each element of each equation must be coded 0, 1, or 2. 
 #' 
 #'@return  This will return a list of two parts
-#' \item{Aliased_with_Fraction} These are the effects that are still confounded with the intercept
-#' \item{Design_Matrix} This is a matrix that is coded 0,1,2 that is the triple foldover created new Design Matrix that is 3 times the size of the orginal design matrix.
+#'\item{Aliased_with_Fraction}{These are the effects that are still confounded with the intercept}
+#'\item{Design_Matrix}{This is a matrix that is coded 0,1,2 that is the triple foldover created new Design Matrix that is 3 times the size of the orginal design matrix.}
 #' 
 #' 
-#' @examples
-#' \dontrun{
-#' design <- matrix(c(1,2,1,0,1,1,1,2,2), byrow = TRUE, nrow = 3)
-#' x <- matrix(c(1,0,2, 0,1,2), nrow = 2, byrow = TRUE)
+#'@examples
+#'\donttest{
+#' design <- matrix(c(1,2,1,0,0,1,1,0,1,2,2,0), byrow = TRUE, nrow = 3)
+#' x <- matrix(c(1,0,2,1, 0,1,2,0, 1,1,2,1), nrow = 3, byrow = TRUE)
 #' tripling(design, x)
 #' }
+#' 
 
 
 tripling <- function(design_matrix, l){
+  x <- design_matrix
   f <- dim(x)[2]
   n <- dim(x)[1]
   l_n <- dim(l)[1]

@@ -6,19 +6,19 @@
 #' 
 #' @param design This needs to be a coded design matrix using (0,1,2) where each row corresponds to one treatment. 
 #' 
-#' @value It will produce a list
-#' \item{Rotation Vector: The first element of the list will be the optimum rotation vector and a small message whether Resoluiton IV is obtainable or if this is minimal abberration}
-#' \item{psuedo-design matrix: This is the fake design matrix which is the coded effects of length 3 that are aliased with the intercept in the original design. This will not neccessarly be a regular fractional factorial design (hence psuedo)}
+#' @return It will produce a list
+#' \item{Rotation Vector}{The first element of the list will be the optimum rotation vector and a small message whether Resoluiton IV is obtainable or if this is minimal abberration}
+#' \item{psuedo-design matrix}{This is the fake design matrix which is the coded effects of length 3 that are aliased with the intercept in the original design. This will not neccessarly be a regular fractional factorial design (hence psuedo)}
 #' 
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' x <- c("a", "b", "c", "d", "e", "f")
-l <- matrix(c(1,2,0,1,1,1, 0,1,1,2,0,0, 1,1,1,2,2,0), nrow = 3, byrow = TRUE)
-trees <- c(0,0,0)
-m <- part(x, l, trees)[[1]]
-head(m)
-what_frac(m)
-opt_rotation(m)
+#'l <- matrix(c(1,2,0,1,1,1, 0,1,1,2,0,0, 1,1,1,2,2,0), nrow = 3, byrow = TRUE)
+#'trees <- c(0,0,0)
+#'m <- part(x, l, trees)[[1]]
+#'head(m)
+#'what_frac(m)
+#'opt_rotation(m)
 #' }
 
 
