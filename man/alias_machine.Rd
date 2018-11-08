@@ -17,3 +17,10 @@ A matrix. Each row will be an estimable effect and all it's aliases.
 \description{
 During a fractional factorial experiment certain effects are fully confounded. This function will tell display the aliased effects for any effect that is still estimable
 }
+\examples{
+\dontrun{
+l <- matrix(c(1,1,0,0,0,1,2,1), nrow = 2, byrow = TRUE)
+l
+alias_machine(4, l)
+}
+}
