@@ -15,7 +15,7 @@
 #' x <- c("a", "b", "c", "d", "e", "f")
 #'l <- matrix(c(1,2,0,1,1,1, 0,1,1,2,0,0, 1,1,1,2,2,0), nrow = 3, byrow = TRUE)
 #'trees <- c(0,0,0)
-#'m <- part(x, l, trees)[[1]]
+#'m <- TripleFrac:::part(x, l, trees)[[1]]
 #'head(m)
 #'what_frac(m)
 #'opt_rotation(m)
@@ -30,6 +30,10 @@
 
 
 opt_rotation <- function(design){
+  
+
+  if(sum(class(design) == c("matrix", "data.frame")) == 0 ) {stop("Please give the design as a matrix or data.frame!", call. = FALSE)}
+  if(sum(sort(unique(as.vector(design))) == c(0, 1, 2)) != 3) {stop("Please code the matrix with 0, 1 and 2's only!")}
   
   x <- design
   
