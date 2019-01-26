@@ -2,7 +2,6 @@
 #' 
 #' This function takes in a system of equations and an orginal design matrix. The output will be a new design matrix of three times the size of the orginal. This acts very similar to triple_fold but how it goes about exapnding the orgiinal design matrix is different in view points (but can be shown to be exactly equivalent).
 #' 
-#'@export
 #' 
 #'@param design_matrix The original design matrix that you would like expanded upon, must come in coded with 0,1,2's
 #'@param l The system of equations. There must be f-1 equations for f being the number of factors. This should come in as a matrix with a unique, independent equation on each row. Each element of each equation must be coded 0, 1, or 2. 

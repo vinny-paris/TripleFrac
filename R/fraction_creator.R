@@ -1,8 +1,6 @@
 #' Creates a 3^(f-1) Regular Fraction
 #' 
 #' This will create a regular fractional factorial design by solving a single generating equation.
-#' 
-#' @export
 #' @param x This is the identifiers for the design factors. It should be a vector with each element being a character string or reducable to a character string. Needs to be of f length.
 #' @param l This is the single equation that the new design is to be generated from. It is a vector of f length with each element being 0, 1 or 2
 #' @param tree A single number that is 0, 1, or 2 which will be the solution to equation from l (i.e. 1*x + 2*y + 0*z mod 3 = tree). This dictates the fraction you want.

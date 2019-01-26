@@ -2,7 +2,6 @@
 #' 
 #' During a fractional factorial experiment certain effects are fully confounded. This function will tell display the aliased effects for any effect that is still estimable
 #' 
-#' @export
 #' 
 #' @param num_of_vars A natural number. This tells the function how many variables are intended for your design. The limit is 26.
 #' @param l This is the system of equations used to generate the aliasing structure. It is to have each row be one "cut" of the factorial design and must have the same number of coefficents (which take the values 0, 1, 2) as x.

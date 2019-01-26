@@ -2,7 +2,6 @@
 #' 
 #' This will produce a design matrix for a non-fractional factorial experiment with n number of factors at 3 levels
 #' 
-#' @export
 #' @param n A natural number, the number of factors in the experiment
 #' @return Returns a matrix with n columns. All entries will be 0, 1, or 2. This will be the "perfect" design matrix for an experiment with these many factors.
 

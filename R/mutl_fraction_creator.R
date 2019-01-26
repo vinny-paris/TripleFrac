@@ -2,7 +2,6 @@
 #' 
 #' This will create a regular fractional factorial design by solving a system of generating equations.
 #' 
-#' @export
 #' @param idss This is the identifiers for the design factors. It should be a vector with each element being a character string or reducable to a character string. Needs to be of f length.
 #' @param l This is the matrix system of equations that the new design is to be generated from. It is a matrix of f width and s length with each element being 0, 1 or 2. Each row corresponds to one generation equation.
 #' @param trees A vector of numbers that is 0, 1, or 2 which will be the solution to equation from l (i.e. 1*x + 2*y + 0*z mod 3 = tree). This dictates the fraction you want.
